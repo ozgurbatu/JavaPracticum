@@ -53,11 +53,11 @@ public class Employee {
         int year=2021-this.hireYear;
 
         if (year< 10 && year >= 0) {
-            return (this.salary + bonus() - tax()) * 0.05;
+            return this.salary * 0.05;
         } else if (year >= 10 && year < 20) {
-            return (this.salary + bonus() - tax()) * 0.1;
+            return this.salary* 0.1;
         } else if (year >= 20) {
-            return (this.salary + bonus() - tax()) * 0.15;
+            return this.salary * 0.15;
         } else {
             try {
                 throw new Exception("Invalid hire year.");
@@ -73,6 +73,10 @@ public class Employee {
                 "\n"+"Salary : " + this.salary +
                 "\n"+"Work hours : " + this.workHours +
                 "\n"+"Hire Year : " + this.hireYear +
+                "\n"+"Tax : " + this.tax() +
+                "\n"+"Bonus : " + this.bonus() +
+                "\n"+"RaiseSalary : " + this.raiseSalary() +
+                "\n"+"Tax and Bonus : " +(this.salary - this.tax() + this.bonus()) +
                 "\n"+"Total Salary : " + (this.salary + this.raiseSalary() - this.tax() + this.bonus());
     }
 
